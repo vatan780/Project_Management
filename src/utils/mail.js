@@ -1,4 +1,4 @@
-import Mailgen from "mailgen";
+import Mailgen from "mailgen"; // from npm
 import nodemailer from "nodemailer";
 
 
@@ -10,6 +10,7 @@ const sendEmail = async (options) => {
       link: "https://taskmanagelink.com",
     },
   });
+
 
   const emailTextual = mailGenerator.generatePlaintext(options.mailgenContent);
 
@@ -80,3 +81,9 @@ const forgotPasswordMailgenContent = (username, passwordResetUrl) => {
     },
   };
 };
+
+
+export {emailVerificationMailgenContent ,
+  forgotPasswordMailgenContent ,
+  sendEmail
+}
